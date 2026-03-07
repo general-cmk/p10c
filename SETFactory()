@@ -1,0 +1,81 @@
+1.) SETFactory()
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <ImageSwitcher
+        android:id="@+id/imageSwitcher"
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Image"/>
+
+    <Button
+        android:id="@+id/btnPrev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previous Image"/>
+
+</LinearLayout>
+
+
+
+->Java
+
+package com.example.imageswitcherapp;
+
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
+import android.widget.ViewSwitcher;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    ImageSwitcher imageSwitcher;
+    int[] images = {R.drawable.image1, R.drawable.image2, R.drawable.image3};
+    int index = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        imageSwitcher = findViewById(R.id.imageSwitcher);
+        Button btnNext = findViewById(R.id.btnNext);
+        Button btnPrev = findViewById(R.id.btnPrev);
+
+        imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+            @Override
+            public ImageView makeView() {
+                ImageView img = new ImageView(MainActivity.this);
+                return img;
+            }
+        });
+
+        imageSwitcher.setImageResource(images[index]);
+
+        // Next Button
+        btnNext.setOnClickListener(v -> {
+            index = (index + 1) % images.length;
+            imageSwitcher.setImageResource(images[index]);
+        });
+
+        // Previous Button
+        btnPrev.setOnClickListener(v -> {
+            index = (index - 1 + images.length) % images.length;
+            imageSwitcher.setImageResource(images[index]);
+        });
+    }
+}
