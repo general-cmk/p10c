@@ -1,0 +1,352 @@
+xml
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/etNum"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:hint="0"
+        android:textAlignment="viewEnd"
+        android:textSize="30dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/btn1"
+            android:text="1"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btn2"
+            android:text="2"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btn3"
+            android:text="3"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnplus"
+            android:text="+"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn4"
+            android:text="4"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btn5"
+            android:text="5"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btn6"
+            android:text="6"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnminus"
+            android:text="-"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn7"
+            android:text="7"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btn8"
+            android:text="8"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btn9"
+            android:text="9"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnmultiply"
+            android:text="x"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btnClear"
+            android:text="Clr"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btn0"
+            android:text="0"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btndevide"
+            android:text="/"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnequals"
+            android:text="="
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
+JAVA
+
+
+package com.example.calculator;
+
+import static com.example.calculator.R.id.*;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+public class MainActivity extends AppCompatActivity {
+    Button
+            b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bplus,bminus,bmulti,bdevide,btnClear,btnequals;
+    TextView num;
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b1=findViewById(R.id.btn1);
+        b2=findViewById(R.id.btn2);
+        b3=findViewById(R.id.btn3);
+        b4=findViewById(R.id.btn4);
+        b5=findViewById(R.id.btn5);
+        b6=findViewById(R.id.btn6);
+        b7=findViewById(R.id.btn7);
+        b8=findViewById(R.id.btn8);
+        b9=findViewById(R.id.btn9);
+        b0=findViewById(R.id.btn0);
+        bplus=findViewById(R.id.btnplus);
+        bminus=findViewById(R.id.btnminus);
+        bmulti=findViewById(R.id.btnmultiply);
+        bdevide=findViewById(R.id.btndevide);
+        btnequals=findViewById(R.id.btnequals);
+        btnClear=findViewById(R.id.btnClear);
+        num=findViewById(R.id.etNum);
+        b1.setOnClickListener(new
+                                      View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              num.append("1");
+                                          }
+                                      });
+        b2.setOnClickListener(new
+                                      View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              num.append("2");
+                                          }
+                                      });
+        b3.setOnClickListener(new
+                                      View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              num.append("3");
+                                          }
+                                      });
+        b4.setOnClickListener(new
+                                      View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              num.append("4");
+                                          }
+                                      });
+        b5.setOnClickListener(new
+                                      View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              num.append("5");
+                                          }
+                                      });
+        b6.setOnClickListener(new
+                                      View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              num.append("6");
+                                          }
+                                      });
+        b7.setOnClickListener(new
+                                      View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              num.append("7");
+                                          }
+                                      });
+        b8.setOnClickListener(new
+                                      View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              num.append("8");
+                                          }
+                                      });
+        b9.setOnClickListener(new
+                                      View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              num.append("9");
+                                          }
+                                      });
+        b0.setOnClickListener(new
+                                      View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              num.append("0");
+                                          }
+                                      });
+        bplus.setOnClickListener(new
+                                         View.OnClickListener() {
+                                             @Override
+                                             public void onClick(View v) {
+                                                 num.append("+");
+                                             }
+                                         });
+        btnClear.setOnClickListener(new
+                                            View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    num.setText("");
+                                                }
+                                            });
+        bmulti.setOnClickListener(new
+                                          View.OnClickListener() {
+                                              @Override
+                                              public void onClick(View v) {
+                                                  num.append("*");
+                                              }
+                                          });
+        bminus.setOnClickListener(new
+                                          View.OnClickListener() {
+                                              @Override
+                                              public void onClick(View v) {
+                                                  num.append("-");
+                                              }
+                                          });
+        bdevide.setOnClickListener(new
+                                           View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View v) {
+                                                   num.append("/");
+                                               }
+                                           });
+        btnequals.setOnClickListener(new
+                                             View.OnClickListener() {
+                                                 @Override
+                                                 public void onClick(View v) {
+                                                     String input=num.getText().toString();
+                                                     int output=0;
+                                                     int num1 = 0, num2 = 0;
+                                                     char operator = ' ';
+                                                     // Find the operator
+                                                     for (int i = 0; i < input.length();
+                                                          i++) {
+                                                         char ch = input.charAt(i);
+                                                         if (ch == '+' || ch == '-' || ch ==
+                                                                 '*' || ch == '/') {
+                                                             operator = ch;
+                                                             num1 =
+                                                                     Integer.parseInt(input.substring(0, i));
+                                                             num2 =
+                                                                     Integer.parseInt(input.substring(i + 1));
+                                                             break;
+                                                         }
+                                                     }
+                                                     switch (operator) {
+                                                         case '+':
+                                                             output=num1 + num2;
+                                                             break;
+                                                         case '-':
+                                                             output=num1-num2;
+                                                             break;
+                                                         case '*':
+                                                             output=num1*num2;
+                                                             break;
+                                                         case '/':
+                                                             if (num2 == 0) {
+                                                                 num.setText("Division by zero");
+                                                             }
+                                                             output=num1 / num2;
+                                                             break;
+                                                         default:
+                                                             num.setText("Invalid input");
+                                                             break;
+                                                     }
+                                                     num.setText(String.valueOf(output));
+                                                 }
+                                             });
+    }
+}
